@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package foodco;
-import java.util.Scanner;
 import java.util.*;
 
 /**
@@ -69,7 +68,7 @@ public class FoodCo {
                     System.out.println("Ingrese uno de los numeros correspondientes a las opciones:");
                     opcion[2] = leer.nextInt();
                     System.out.println("");
-                    switch(opcion[2])
+                    switch(opcion[1])
                     {
                         case 1 : System.out.println("AGREGAR CLIENTE");
                                  System.out.println("Ingrese nombre: ");                                
@@ -87,7 +86,7 @@ public class FoodCo {
                     System.out.println("2. Eliminar campaña");
                     System.out.println("3. Mostrar campañas");
                     opcion[3] = leer.nextInt();
-                    switch(opcion[3])
+                    switch(opcion[1])
                     {
                         case 1 : System.out.println("AGREGAR CAMPAÑA");
                                  System.out.println("Ingrese nombre: ");                                
@@ -104,7 +103,7 @@ public class FoodCo {
                     System.out.println("3. Eliminar fabrica ");
                     System.out.println("4. Eliminar producto");
                     opcion[4] = leer.nextInt();
-                    switch(opcion[4])
+                    switch(opcion[1])
                     {
                         case 1 : 
                         case 2 :    

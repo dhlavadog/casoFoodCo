@@ -11,7 +11,9 @@ import java.util.*;
  *
  * @author Juliana
  */
-public class Fabrica {
+public class Fabrica 
+{
+    
     private ArrayList<Personal> personal;
     private ArrayList<Producto> producto;
     private Personal empleado;

@@ -10,7 +10,8 @@ package foodco;
  *
  * @author Juliana
  */
-public class Producto {
+public class Producto 
+{
     private String codigo;
     private double precio;
     private String nombre;

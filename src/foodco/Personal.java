@@ -10,7 +10,9 @@ package foodco;
  *
  * @author Juliana
  */
-public class Personal {
+public class Personal 
+{
+    
     private String nombre;
     private String apellido;
     private double salario;
@@ -19,7 +21,8 @@ public class Personal {
     private String categoria;
 
    
-    public Personal() {
+    public Personal() 
+    {
         this.nombre = "";
         this.apellido = "";
         this.salario = 0;
@@ -28,51 +31,63 @@ public class Personal {
         this.categoria = "";
     }
 
-    public String getNombre() {
+    public String getNombre() 
+    {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre) 
+    {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
+    public String getApellido() 
+    {
         return apellido;
     }
 
-    public void setApellido(String apellido) {
+    public void setApellido(String apellido) 
+    {
         this.apellido = apellido;
     }
 
-    public double getSalario() {
+    public double getSalario()
+    {
         return salario;
     }
 
-    public void setSalario(double salario) {
+    public void setSalario(double salario) 
+    {
         this.salario = salario;
     }
 
-    public int getCodigo() {
+    public int getCodigo() 
+    {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(int codigo) 
+    {
         this.codigo = codigo;
     }
 
-    public double getHorasTrabajo() {
+    public double getHorasTrabajo() 
+    {
         return horasTrabajo;
     }
 
-    public void setHorasTrabajo(double horasTrabajo) {
+    public void setHorasTrabajo(double horasTrabajo) 
+    {
         this.horasTrabajo = horasTrabajo;
     }
 
-    public String getCategoria() {
+    public String getCategoria() 
+    {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(String categoria) 
+    {
         this.categoria = categoria;
     }
     

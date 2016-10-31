@@ -11,14 +11,14 @@ import java.util.*;
  * @author Juliana
  */
 public class Empresa {
-    private ArrayList <Fabrica> fabricas;
+    private Fabrica fabricas[];
     private ArrayList <Campaña> campañas;
     private ArrayList <Cliente> clientes;
     private ArrayList <Producto> productos;
     private Marca marca;
 
     public Empresa() {
-        this.fabricas = new ArrayList <Fabrica>();
+        this.fabricas = new Fabrica[4];
         this.campañas = new ArrayList <Campaña>();
         this.clientes = new ArrayList <Cliente>();
         this.marca = new Marca();
