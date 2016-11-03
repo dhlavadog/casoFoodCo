@@ -12,14 +12,14 @@ package foodco;
 public class Campaña 
 {
     private String nombre;
-    private int horaTransmision;
+    private String horaTransmision;
     private int costo;
 
-    public Campaña(String a) 
+    public Campaña(String a, String hora, int costo ) 
     {
         this.nombre = a;
-        this.horaTransmision = 0;
-        this.costo = 0;
+        this.horaTransmision = hora;
+        this.costo = costo;
     }
 
     public String getNombre() 
@@ -32,12 +32,12 @@ public class Campaña
         this.nombre = nombre;
     }
 
-    public int getHoraTransmision() 
+    public String getHoraTransmision() 
     {
         return horaTransmision;
     }
 
-    public void setHoraTransmision(int horaTransmision) 
+    public void setHoraTransmision(String horaTransmision) 
     {
         this.horaTransmision = horaTransmision;
     }

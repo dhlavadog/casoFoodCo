@@ -44,7 +44,6 @@ public static void main(String[] args)
                   
                   for(int i = 0 ; i<foodCo.getFabricas().size() ; i++)
                     {
-                      System.out.println("══════════════════════════════");
                       System.out.println("Nombre: "+foodCo.getFabricas().get(i).getNombre());    
                       System.out.println("Tipo: "+foodCo.getFabricas().get(i).getTipo());
                       System.out.println("Numero de Empleados: "+foodCo.getFabricas().get(i).getEmpleados().size());
@@ -74,7 +73,7 @@ public static void main(String[] args)
                                     switch(opcion[2])
                                     {
                                         case 1 : System.out.println("══════════════════════════════");
-                                                 System.out.println("1.1.1. AGREGAR EMPLEADOS \n");
+                                                 System.out.println("1.1.1. AGREGAR EMPLEADOS");
                                                  System.out.println("══════════════════════════════");
                                                  System.out.println("Escriba el nombre de la fabrica a la que va dirigido");
                                                  String nombreFabrica = leer.next();
@@ -144,6 +143,12 @@ public static void main(String[] args)
                                         case 2 : System.out.println("══════════════════════════════");
                                                  System.out.println("1.1.2. ELIMINAR EMPLEADO");
                                                  System.out.println("══════════════════════════════");
+                                                 System.out.println("Fabricas:");
+                                                 for(int i = 0; i< foodCo.getFabricas().size() ; i++)
+                                                 {
+                                                    System.out.println("Nombre: "+foodCo.getFabricas().get(i).getNombre());
+                                                    System.out.print("Tipo: "+foodCo.getFabricas().get(i).getTipo());
+                                                 }
                                                  System.out.println("Escriba el nombre de la fabrica a la que pertenece el empleado");
                                                  nombreFabrica = leer.next();
                                                   for(int i = 0 ; i<foodCo.getFabricas().size() ; i++)
@@ -222,10 +227,14 @@ public static void main(String[] args)
                                         case 1 : System.out.println("══════════════════════════════");
                                                  System.out.println("1.2.1. AGREGAR PRODUCTO");
                                                  System.out.println("══════════════════════════════");
+                                                 System.out.println("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄");
                                                  System.out.println("Fabricas:");
+                                                 System.out.println("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄");
                                                  for(int i = 0; i< foodCo.getFabricas().size() ; i++)
                                                  {
-                                                    System.out.println(foodCo.getFabricas().get(i).getNombre()); 
+                                                    System.out.println("Nombre: "+foodCo.getFabricas().get(i).getNombre());
+                                                    System.out.println("Tipo: "+foodCo.getFabricas().get(i).getTipo());
+                                                    System.out.println("══════════════════════════════");
                                                  }
                                                  
                                                  System.out.println("Ingrese el nombre de la Fabrica que producirá el producto");
@@ -319,6 +328,10 @@ public static void main(String[] args)
                                                      System.out.println("Fabrica: "+foodCo.getFabricas().get(i).getNombre());
                                                      System.out.println("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄");
                                                      foodCo.getFabricas().get(i).mostrarProductos();
+                                                     if(foodCo.getFabricas().get(i).getProductos().isEmpty())
+                                                     {
+                                                         System.out.println("No hay lineas de produccion activas");
+                                                     }
                                                  }
                                         break;
                                         
@@ -329,7 +342,7 @@ public static void main(String[] args)
                                                  {
                                                      System.out.println("══════════════════════════════");
                                                      System.out.println("Fabrica: "+foodCo.getFabricas().get(i).getNombre());
-                                                     System.out.println("Costo Produccion"+foodCo.getFabricas().get(i).costoProductos());
+                                                     System.out.println("Costo Produccion: "+foodCo.getFabricas().get(i).costoProductos());
                                                      System.out.println("══════════════════════════════");
                                                      
                                                  }
@@ -419,7 +432,71 @@ public static void main(String[] args)
          case 3 : System.out.println("══════════════════════════════");
                   System.out.println("3. CAMPAÑA");
                   System.out.println("══════════════════════════════");
-                  
+                  System.out.println("1. Agregar Campaña");
+                  System.out.println("2. Eliminar Campaña");
+                  System.out.println("3. Ver campañas Activas");
+                  System.out.println("4. Volver");
+                  System.out.println("Seleccione una opcion:");
+                  opcion[1] = leer.nextInt();
+                  switch(opcion[1])
+                  {
+                      case 1 : System.out.println("══════════════════════════════");
+                               System.out.println("3.1 AGREGAR CAMPAÑA");
+                               System.out.println("══════════════════════════════");
+                               System.out.println("Ingrse el nombre de la Campaña");
+                               String nombreCampaña = leer.next();
+                               System.out.println("Ingrese hora de transmision");
+                               String horaTransmision = leer.next();
+                               System.out.println("Ingrese costo estimado de campaña");
+                               int costoCampaña = leer.nextInt();
+                               foodCo.getCampañas().add(new Campaña(nombreCampaña, horaTransmision, costoCampaña));
+                               System.out.println("Campaña creada.");
+                      break;
+                      
+                      case 2 : System.out.println("══════════════════════════════");
+                               System.out.println("3.1 ELIMINAR CAMPAÑA");
+                               System.out.println("══════════════════════════════");
+                               System.out.println("Ingrese el nombre de la campaña a borrar");
+                               nombreCampaña = leer.next();
+                               for(int i = 0 ; i <foodCo.getCampañas().size();i++)
+                               {
+                                   if(foodCo.getCampañas().get(i).getNombre().equals(nombreCampaña))
+                                   {
+                                       System.out.println("Campaña: "+foodCo.getCampañas().get(i).getNombre()+" eliminada");
+                                       foodCo.getCampañas().remove(i);
+                                   }
+                                   else
+                                   {
+                                       if( i == foodCo.getCampañas().size()-1) System.out.println("No existe una Campaña con ese nombre");
+                                   }
+                                   
+                               }
+                      break;
+                      
+                      case 3 : System.out.println("══════════════════════════════");
+                               System.out.println("3.3 VER CAMPAÑAS ACTIVAS");
+                               System.out.println("══════════════════════════════");
+                               for(int i = 0 ; i< foodCo.getCampañas().size() ; i++)
+                               {
+                                   System.out.println("Nombre:"+foodCo.getCampañas().get(i).getNombre());
+                                   System.out.println("Hora de Transmision: "+foodCo.getCampañas().get(i).getHoraTransmision());
+                                   System.out.println("Costo de Transmision: "+foodCo.getCampañas().get(i).getCosto()+"$");
+                                   System.out.println("");
+                                   
+                                   if(foodCo.getCampañas().isEmpty())
+                                   {
+                                       System.out.println("No existen campañas Activas");
+                                   }
+                               }
+                      break;
+                       
+                      case 4 : break;
+                  }
+          break;
+          
+         case 4 : System.out.println("Su sesion ha finalizado");
+                  menu = false;
+                  break;
                                
          default : System.out.println("Ingrese un numero valido");
          break;
